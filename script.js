@@ -45,9 +45,8 @@ const grid = new wijmo.grid.FlexGrid('#gridContainer', {
     {
       binding: 'company',
       header: '会社',
-      dataMap: new wijmo.grid.DataMap(companyData, 'internalKey', 'companyName'),
-      // dataMapEditorプロパティにwijmo.grid.DataMapEditorを指定
-      editor: new wijmo.grid.DataMapEditor() 
+      dataMap: new wijmo.grid.DataMap(companyData, 'internalKey', 'companyName')
+      // 'editor' の行を削除
     }
   ],
   itemsSource: bindDataList
