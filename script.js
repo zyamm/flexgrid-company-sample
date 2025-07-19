@@ -41,7 +41,8 @@ const grid = new wijmo.grid.FlexGrid('#gridContainer', {
     {
       binding: 'company',
       header: '会社',
-      dataMap: new wijmo.grid.DataMap(companyData, 'internalKey', 'companyName')
+      dataMap: new wijmo.grid.DataMap(companyData, 'internalKey', 'companyName'),
+      showDropDown: true // <<< この行を追加
     }
   ],
   itemsSource: bindDataList
