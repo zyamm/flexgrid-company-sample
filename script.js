@@ -37,12 +37,17 @@ bindDataList.push({
 const grid = new wijmo.grid.FlexGrid('#gridContainer', {
   autoGenerateColumns: false,
   columns: [
-    { binding: 'country', header: '国コード' },
+    { 
+      binding: 'country', 
+      header: '国コード',
+      isReadOnly: true // 国コードは編集させない
+    },
     {
       binding: 'company',
       header: '会社',
       dataMap: new wijmo.grid.DataMap(companyData, 'internalKey', 'companyName'),
-      showDropDown: true // <<< この行を追加
+      // dataMapEditorプロパティにwijmo.grid.DataMapEditorを指定
+      editor: new wijmo.grid.DataMapEditor() 
     }
   ],
   itemsSource: bindDataList
